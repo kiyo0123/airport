@@ -60,7 +60,7 @@ def insert_data(instance_id, database_id):
     #print(alist)
 
     rowpos = 0
-    batchsize = 10
+    batchsize = 1000
     while rowpos < len(alist):
         with database.batch() as batch:
             batch.insert(
@@ -68,9 +68,9 @@ def insert_data(instance_id, database_id):
                 columns=collist,
                 values=alist[rowpos:rowpos+batchsize]
             )  
+            print('batch insert done from ' + str(rowpos) + ' to ' + str(rowpos+batchsize) ) 
             rowpos = rowpos + batchsize
-            print('batch done') 
-    
+            
     print('Done')
 
 def delete_data(instance_id, database_id):

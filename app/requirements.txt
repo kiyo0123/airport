@@ -1,0 +1,4 @@
+google-cloud-spanner==1.15.1
+flask
+gunicorn
+futures==3.3.0; python_version < "3"
