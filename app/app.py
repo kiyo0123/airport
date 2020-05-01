@@ -13,7 +13,7 @@ database = instance.database(database_id)
 
 @app.route('/')
 def hello():
-    return "Hi, I'm working..."
+    return "hey, I'm working... it's true."
 
 @app.route('/airports/<string:code>/')
 def airports(code):
