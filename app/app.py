@@ -15,8 +15,8 @@ database = instance.database(database_id)
 def hello():
     return "hey, I'm working... it's true."
 
-@app.route('/airports/<string:code>/')
-def airports(code):
+@app.route('/airport/<string:code>/')
+def airport(code):
     with database.snapshot() as snapshot:
         results = snapshot.execute_sql(
             "SELECT * from Airports WHERE iata_code = '%s'" % code
