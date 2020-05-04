@@ -1,4 +1,5 @@
 google-cloud-spanner==1.15.1
 flask
+flask-cors
 gunicorn
 futures==3.3.0; python_version < "3"

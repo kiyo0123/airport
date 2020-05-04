@@ -1,9 +1,11 @@
 import json
 import os
 from flask import Flask
+from flask_cors import CORS
 from google.cloud import spanner
 
 app = Flask(__name__)
+CORS(app, resources={r"/*": {"origins": "*"}})
 
 instance_id = 'tokyo-spanner'
 database_id = 'testdb'
@@ -13,7 +15,7 @@ database = instance.database(database_id)
 
 @app.route('/')
 def hello():
-    return "hey, I'm working... it's true."
+    return "hey, I'm working... "
 
 @app.route('/airport/<string:code>/')
 def airport(code):
